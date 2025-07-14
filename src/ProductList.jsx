@@ -261,6 +261,7 @@ function ProductList({ onHomeClick }) {
     const handleContinueShopping = (e) => {
         e.preventDefault();
         setShowCart(false);
+        setAddedToCart({});
     };
 
     const handleAddToCart = (product) => {
@@ -315,7 +316,7 @@ function ProductList({ onHomeClick }) {
                                     className="product-button"
                                     onClick={() => handleAddToCart(plant)} // Handle adding plant to cart
                                 >
-                                    Add to Cart
+                                    {addedToCart[plant.name] ? "Added" : "Add to Cart"}
                                 </button>
                                 </div>
                             ))}
